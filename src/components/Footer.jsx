@@ -38,15 +38,10 @@ export default function Footer() {
               <div className="footer-logo" onClick={goHome} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goHome() } }} role="button" tabIndex={0}>
                 <img
                   src="/images/hsnr-logo.svg"
-                  alt="Logo Hochschule Niederrhein"
+                  alt="Förderverein der ingenieurwissenschaftlichen Fachbereiche, Standort Krefeld – Hochschule Niederrhein"
                   className="footer-logo-img"
                 />
               </div>
-              <p className="footer-brand-name">
-                Förderverein der ingenieurwissenschaftlichen
-                Fachbereiche der Hochschule Niederrhein,
-                Standort Krefeld e.&thinsp;V.
-              </p>
               <p className="footer-tagline">
                 Gemeinnützig. Transparent. Wirkung vor Werbung.
               </p>

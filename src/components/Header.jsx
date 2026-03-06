@@ -94,9 +94,14 @@ export default function Header() {
       <div className="container header-content">
         <div className="logo" onClick={goHome} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goHome() } }} role="button" tabIndex={0}>
           <img
-            src="/images/hsnr-logo.svg"
-            alt="Logo Hochschule Niederrhein – Förderverein IWI"
-            className="logo-hsnr"
+            src="/images/Logo_Förderverein.png"
+            alt="Förderverein der ingenieurwissenschaftlichen Fachbereiche, Standort Krefeld – Hochschule Niederrhein"
+            className="logo-full"
+          />
+          <img
+            src="/images/hsnr-symbol.png"
+            alt="Förderverein – Hochschule Niederrhein"
+            className="logo-icon"
           />
         </div>
 
@@ -104,9 +109,9 @@ export default function Header() {
           {/* Logo-Bereich im Mobilmenü */}
           <div className="nav-mobile-header">
             <img
-              src="/images/hsnr-logo.svg"
-              alt="Logo Hochschule Niederrhein"
-              className="nav-mobile-logo"
+              src="/images/Logo_Förderverein.png"
+              alt="Förderverein der ingenieurwissenschaftlichen Fachbereiche, Standort Krefeld – Hochschule Niederrhein"
+              className="nav-mobile-logo-img"
             />
           </div>
 

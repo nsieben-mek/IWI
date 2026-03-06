@@ -45,11 +45,11 @@ export default function Datenschutz() {
 
         <p>
           <strong>Wie erfassen wir Ihre Daten?</strong><br />
-          Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei
-          kann es sich z.&thinsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere
-          Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch
-          unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&thinsp;B. Internetbrowser,
-          Betriebssystem oder Uhrzeit des Seitenaufrufs).
+          Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen, z.&thinsp;B.
+          über ein Kontaktformular. Darüber hinaus werden beim Besuch der Website automatisch
+          technische Daten durch den Webserver erfasst (sogenannte Server-Log-Dateien, z.&thinsp;B.
+          IP-Adresse, Browsertyp oder Uhrzeit des Zugriffs). Diese Website setzt keine Cookies
+          ein und verwendet keine Analyse- oder Tracking-Tools.
         </p>
 
         <p>
@@ -194,9 +194,9 @@ export default function Datenschutz() {
         <h3>Mitgliedschaftsformular</h3>
         <p>
           Wenn Sie über das Mitgliedschaftsformular eine Anfrage zur Mitgliedschaft stellen,
-          werden die von Ihnen eingegebenen Daten (Name, E-Mail, Organisation, gewähltes
-          Mitgliedschaftspaket) zur Bearbeitung Ihrer Anfrage gespeichert und per E-Mail an den
-          Verein übermittelt.           Ein Mitglied des Vorstands meldet sich anschließend persönlich bei Ihnen.
+          werden die von Ihnen eingegebenen Daten (Name, E-Mail, Organisation) zur
+          Bearbeitung Ihrer Anfrage gespeichert und per E-Mail an den
+          Verein übermittelt.
         </p>
         <p>
           Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher

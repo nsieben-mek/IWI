@@ -27,8 +27,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
   transition: padding 0.4s ease-out;
 }
 
@@ -44,24 +44,39 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 0;
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo:hover {
   opacity: 0.85;
 }
 
-.logo-hsnr {
-  height: 56px;
+/* Vollständiges Logo (PNG) – sichtbar im Normalzustand */
+.logo-full {
+  height: 100px;
   width: auto;
+  display: block;
   transition: height 0.4s ease-out;
 }
 
-.header.scrolled .logo-hsnr {
-  height: 42px;
+/* Nur Symbol-Icon – sichtbar beim Scrollen */
+.logo-icon {
+  height: 36px;
+  width: auto;
+  display: none;
+  transition: height 0.4s ease-out;
+}
+
+.header.scrolled .logo-full {
+  display: none;
+}
+
+.header.scrolled .logo-icon {
+  display: block;
 }
 
 
@@ -263,15 +278,9 @@
     border-bottom: 2px solid var(--hsnr-blue);
   }
 
-  .nav-mobile-logo {
-    height: 36px;
+  .nav-mobile-logo-img {
+    height: 60px;
     width: auto;
-  }
-
-  .nav-mobile-title {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-gray-800);
   }
 
   /* Links vertikal */
@@ -326,11 +335,11 @@
 }
 
 @media (max-width: 480px) {
-  .logo-hsnr {
-    height: 40px;
+  .logo-full {
+    height: 60px;
   }
 
-  .header.scrolled .logo-hsnr {
-    height: 34px;
+  .logo-icon {
+    height: 28px;
   }
 }

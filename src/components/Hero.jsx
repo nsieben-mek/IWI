@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="hero">
       <div className="container hero-content">
         <div className="hero-text">
-          <p className="hero-overline">Förderverein des Fachbereichs Ingenieurwissenschaften &amp; Informatik</p>
+          <p className="hero-overline">Hochschule Niederrhein – Standort Krefeld</p>
           <h1>Ingenieurausbildung stärken. Talente fördern. Praxis ermöglichen.</h1>
           <p className="hero-description">
             Seit vielen Jahren unterstützen wir dort, wo es zählt: bei studentischen Projekten,

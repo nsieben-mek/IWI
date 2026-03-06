@@ -47,18 +47,11 @@
 }
 
 .footer-logo-img {
-  height: 48px;
-  width: auto;
+  height: auto;
+  width: 100%;
+  max-width: 340px;
   /* Logo weiß einfärben für dunklen Hintergrund */
   filter: brightness(0) invert(1);
-}
-
-.footer-brand-name {
-  color: var(--color-gray-300);
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-normal);
-  margin: 0;
-  max-width: 320px;
 }
 
 .footer-tagline {
@@ -186,8 +179,8 @@
     text-align: center;
   }
 
-  .footer-brand-name {
-    max-width: none;
+  .footer-logo-img {
+    max-width: 280px;
   }
 
   .footer-social {

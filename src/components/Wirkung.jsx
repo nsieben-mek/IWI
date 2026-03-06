@@ -45,9 +45,7 @@ export default function Wirkung() {
           ))}
         </div>
 
-        <div className="section-cta">
-          <a href="#downloads" className="btn btn-primary">Impact-Bericht ansehen</a>
-        </div>
+
       </div>
     </section>
   )

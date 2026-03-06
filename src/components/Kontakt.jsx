@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import useMathCaptcha from '../hooks/useMathCaptcha'
 import './Kontakt.css'
 
 export default function Kontakt() {
@@ -7,8 +9,10 @@ export default function Kontakt() {
     email: '',
     nachricht: ''
   })
+  const [datenschutz, setDatenschutz] = useState(false)
   const [status, setStatus] = useState({ type: '', message: '' })
   const [loading, setLoading] = useState(false)
+  const captcha = useMathCaptcha()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -16,6 +20,12 @@ export default function Kontakt() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!captcha.isCorrect) {
+      setStatus({ type: 'error', message: 'Die Sicherheitsfrage wurde nicht korrekt beantwortet.' })
+      return
+    }
+
     setLoading(true)
     setStatus({ type: '', message: '' })
 
@@ -30,6 +40,8 @@ export default function Kontakt() {
       if (res.ok) {
         setStatus({ type: 'success', message: data.message })
         setFormData({ name: '', email: '', nachricht: '' })
+        setDatenschutz(false)
+        captcha.reset()
       } else {
         setStatus({ type: 'error', message: data.error || 'Ein Fehler ist aufgetreten.' })
       }
@@ -72,6 +84,34 @@ export default function Kontakt() {
             <div className="form-group">
               <label htmlFor="kontakt-nachricht">Nachricht *</label>
               <textarea id="kontakt-nachricht" name="nachricht" rows="4" value={formData.nachricht} onChange={handleChange} required></textarea>
+            </div>
+
+            <div className="form-group form-captcha">
+              <label htmlFor="kontakt-captcha">Sicherheitsfrage: Was ergibt {captcha.task.a} + {captcha.task.b}? *</label>
+              <input
+                type="text"
+                id="kontakt-captcha"
+                inputMode="numeric"
+                autoComplete="off"
+                value={captcha.input}
+                onChange={(e) => captcha.setInput(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group form-checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={datenschutz}
+                  onChange={(e) => setDatenschutz(e.target.checked)}
+                  required
+                />
+                <span>
+                  Ich habe die <Link to="/datenschutz" target="_blank">Datenschutzerklärung</Link> gelesen
+                  und bin mit der Verarbeitung meiner Daten einverstanden. *
+                </span>
+              </label>
             </div>
 
             <button type="submit" className="btn btn-primary" disabled={loading}>

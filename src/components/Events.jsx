@@ -5,14 +5,7 @@ import './Events.css'
  * - Objekt setzen → Ankündigungskarte wird angezeigt
  * - null setzen   → allgemeiner Hinweis "Termin wird bekannt gegeben"
  */
-const currentEvent = {
-  title: 'Netzwerk-Abend Sommersemester 2026',
-  date: '12. Juni 2026, 18:00 Uhr',
-  location: 'Campus Krefeld Süd, Gebäude S, Raum S01',
-  description: 'Projekt-Pitches von Studierenden, Austausch mit Unternehmenspartnern und Alumni, Networking bei Getränken und Fingerfood. Offen für alle Interessierten.',
-  ctaLabel: 'Jetzt anmelden',
-  ctaLink: '#kontakt',
-}
+const currentEvent = null
 
 export default function Events() {
   return (

@@ -1,18 +1,20 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import useMathCaptcha from '../hooks/useMathCaptcha'
 import './MitgliedWerden.css'
 
 export default function MitgliedWerden() {
   const [formData, setFormData] = useState({
-    zielgruppe: '',
-    paket: '',
     vorname: '',
     nachname: '',
     email: '',
     organisation: '',
     nachricht: ''
   })
+  const [datenschutz, setDatenschutz] = useState(false)
   const [status, setStatus] = useState({ type: '', message: '' })
   const [loading, setLoading] = useState(false)
+  const captcha = useMathCaptcha()
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -20,6 +22,12 @@ export default function MitgliedWerden() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!captcha.isCorrect) {
+      setStatus({ type: 'error', message: 'Die Sicherheitsfrage wurde nicht korrekt beantwortet.' })
+      return
+    }
+
     setLoading(true)
     setStatus({ type: '', message: '' })
 
@@ -33,7 +41,9 @@ export default function MitgliedWerden() {
 
       if (res.ok) {
         setStatus({ type: 'success', message: data.message })
-        setFormData({ zielgruppe: '', paket: '', vorname: '', nachname: '', email: '', organisation: '', nachricht: '' })
+        setFormData({ vorname: '', nachname: '', email: '', organisation: '', nachricht: '' })
+        setDatenschutz(false)
+        captcha.reset()
       } else {
         setStatus({ type: 'error', message: data.error || 'Ein Fehler ist aufgetreten.' })
       }
@@ -80,51 +90,59 @@ export default function MitgliedWerden() {
               </div>
             )}
 
-            <div className="form-row form-row-3">
+            <div className="form-row form-row-2">
               <div className="form-group">
-                <label htmlFor="zielgruppe">Ich bin *</label>
-                <select id="zielgruppe" name="zielgruppe" value={formData.zielgruppe} onChange={handleChange} required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="unternehmen">Unternehmen</option>
-                  <option value="alumni">Alumni / Förderfreund</option>
-                  <option value="studierende">Studierende/r</option>
-                </select>
+                <label htmlFor="mw-vorname">Vorname *</label>
+                <input type="text" id="mw-vorname" name="vorname" value={formData.vorname} onChange={handleChange} required />
               </div>
               <div className="form-group">
-                <label htmlFor="paket">Mitgliedschaftspaket *</label>
-                <select id="paket" name="paket" value={formData.paket} onChange={handleChange} required>
-                  <option value="">Bitte auswählen</option>
-                  <option value="basis">Basis (500 € p. a.)</option>
-                  <option value="netzwerk">Netzwerk (1.500 € p. a.)</option>
-                  <option value="partner">Partner (3.000 € p. a.)</option>
-                  <option value="alumni">Alumni (50–120 € p. a.)</option>
-                  <option value="studierende">Studierende (kostenlos / 10 € p. a.)</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label htmlFor="organisation">Organisation / Unternehmen</label>
-                <input type="text" id="organisation" name="organisation" value={formData.organisation} onChange={handleChange} />
+                <label htmlFor="mw-nachname">Nachname *</label>
+                <input type="text" id="mw-nachname" name="nachname" value={formData.nachname} onChange={handleChange} required />
               </div>
             </div>
 
-            <div className="form-row form-row-3">
+            <div className="form-row form-row-2">
               <div className="form-group">
-                <label htmlFor="vorname">Vorname *</label>
-                <input type="text" id="vorname" name="vorname" value={formData.vorname} onChange={handleChange} required />
+                <label htmlFor="mw-email">E-Mail *</label>
+                <input type="email" id="mw-email" name="email" value={formData.email} onChange={handleChange} required />
               </div>
               <div className="form-group">
-                <label htmlFor="nachname">Nachname *</label>
-                <input type="text" id="nachname" name="nachname" value={formData.nachname} onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">E-Mail *</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                <label htmlFor="mw-organisation">Unternehmen / Organisation</label>
+                <input type="text" id="mw-organisation" name="organisation" value={formData.organisation} onChange={handleChange} />
               </div>
             </div>
 
             <div className="form-group">
-              <label htmlFor="nachricht">Nachricht (optional)</label>
-              <textarea id="nachricht" name="nachricht" rows="2" value={formData.nachricht} onChange={handleChange}></textarea>
+              <label htmlFor="mw-nachricht">Nachricht (optional)</label>
+              <textarea id="mw-nachricht" name="nachricht" rows="2" value={formData.nachricht} onChange={handleChange}></textarea>
+            </div>
+
+            <div className="form-group form-captcha">
+              <label htmlFor="mw-captcha">Sicherheitsfrage: Was ergibt {captcha.task.a} + {captcha.task.b}? *</label>
+              <input
+                type="text"
+                id="mw-captcha"
+                inputMode="numeric"
+                autoComplete="off"
+                value={captcha.input}
+                onChange={(e) => captcha.setInput(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="form-group form-checkbox">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={datenschutz}
+                  onChange={(e) => setDatenschutz(e.target.checked)}
+                  required
+                />
+                <span>
+                  Ich habe die <Link to="/datenschutz" target="_blank">Datenschutzerklärung</Link> gelesen
+                  und bin mit der Verarbeitung meiner Daten einverstanden. *
+                </span>
+              </label>
             </div>
 
             <div className="form-actions">
