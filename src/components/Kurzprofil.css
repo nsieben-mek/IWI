@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Kurzprofil Section – kompakt, direkt unter dem Hero
+   ========================================================================== */
+
+.kurzprofil {
+  background-color: var(--color-white);
+  padding: var(--space-2xl) 0;
+}
+
+.kurzprofil-header {
+  margin-bottom: var(--space-lg);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.feature-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-text h3 {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-xs);
+}
+
+.feature-text p {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+  line-height: var(--line-height-normal);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: var(--space-sm) 0;
+  }
+}

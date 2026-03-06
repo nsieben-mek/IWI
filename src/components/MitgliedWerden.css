@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Mitglied werden Section – kompakt
+   ========================================================================== */
+
+.mitglied-werden {
+  background-color: var(--color-white);
+}
+
+/* --- Horizontaler Stepper --- */
+.mitglied-werden .steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: var(--space-xl);
+}
+
+.mitglied-werden .step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.mitglied-werden .step-number {
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  flex-shrink: 0;
+}
+
+.mitglied-werden .step-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-800);
+  white-space: nowrap;
+}
+
+.mitglied-werden .step-line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-gray-200);
+  margin: 0 var(--space-md);
+  flex-shrink: 0;
+}
+
+/* --- Formular --- */
+
+.mitglied-werden-form {
+  background-color: var(--color-bg);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+}
+
+.mitglied-werden-form .form-group {
+  margin-bottom: var(--space-md);
+}
+
+.mitglied-werden-form .form-group label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  font-size: var(--font-size-sm);
+}
+
+.mitglied-werden-form .form-group input,
+.mitglied-werden-form .form-group select,
+.mitglied-werden-form .form-group textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  transition: var(--transition-fast);
+  background-color: var(--color-white);
+}
+
+.mitglied-werden-form .form-group input:focus,
+.mitglied-werden-form .form-group select:focus,
+.mitglied-werden-form .form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(7, 161, 226, 0.15);
+}
+
+.mitglied-werden-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.mitglied-werden-form .form-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mitglied-werden-form .form-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .mitglied-werden .steps {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .mitglied-werden .step-line {
+    width: 2px;
+    height: 16px;
+    margin: 0;
+  }
+
+  .mitglied-werden-form .form-row,
+  .mitglied-werden-form .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .mitglied-werden-form .form-actions {
+    flex-direction: column;
+  }
+
+  .mitglied-werden-form .form-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

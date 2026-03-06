@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Wirkung / Impact Section
+   ========================================================================== */
+
+.wirkung {
+  background-color: var(--color-bg);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.impact-card {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid var(--color-gray-100);
+}
+
+.impact-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.impact-number {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  line-height: 1;
+}
+
+.impact-card h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.impact-card p {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}

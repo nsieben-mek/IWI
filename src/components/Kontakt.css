@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Kontakt Section – Formular links, Sidebar rechts
+   ========================================================================== */
+
+.kontakt {
+  background-color: var(--color-white);
+}
+
+.kontakt-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* --- Rechte Spalte: Sidebar --- */
+.kontakt-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.kontakt-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.kontakt-item {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.kontakt-item svg {
+  color: var(--color-primary);
+  flex: 0 0 48px;
+  margin-top: 2px;
+}
+
+.kontakt-item strong {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--color-black);
+  font-size: var(--font-size-sm);
+}
+
+.kontakt-item p {
+  color: var(--color-gray-700);
+  margin-bottom: 0;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Ansprechpartner – bündig mit Kontakt-Items */
+.kontakt-person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.kontakt-person-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.kontakt-person-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kontakt-person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.kontakt-person-info strong {
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+}
+
+.kontakt-person-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+}
+
+.kontakt-person-org {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+}
+
+/* --- Linke Spalte: Formular (gleiche Styles wie Mitglied-werden) --- */
+.kontakt-form {
+  background-color: var(--color-bg);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+}
+
+.kontakt-form .form-group {
+  margin-bottom: var(--space-md);
+}
+
+.kontakt-form .form-group label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  font-size: var(--font-size-sm);
+}
+
+.kontakt-form input,
+.kontakt-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  transition: var(--transition-fast);
+  background-color: var(--color-white);
+}
+
+.kontakt-form input:focus,
+.kontakt-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(7, 161, 226, 0.15);
+}
+
+.kontakt-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .kontakt-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .kontakt-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}

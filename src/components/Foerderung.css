@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Förderung Section – dunkler Hintergrund, sachlich-institutionell
+   ========================================================================== */
+
+.foerderung {
+  background-color: var(--hsnr-blue-dark);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Akzentlinie oben */
+.foerderung::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--hsnr-blue) 0%, var(--hsnr-blue-dark) 100%);
+}
+
+/* Header auf dunklem Hintergrund */
+.foerderung-header h2 {
+  color: var(--color-white);
+}
+
+.foerderung-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* --- 3-Spalten-Grid für Förderbereiche --- */
+.foerderung-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+/* Karten: weiß auf dunkel, sachlich, eckig */
+.foerderart-card {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: var(--space-xl);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.foerderart-icon {
+  color: var(--hsnr-blue);
+  margin-bottom: var(--space-md);
+}
+
+.foerderart-card h3 {
+  color: var(--color-black);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.foerderart-text {
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-sm);
+  flex: 1;
+}
+
+.foerderart-detail {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-md);
+}
+
+/* CTA-Button in der Karte */
+.foerderart-cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* --- Unterer CTA --- */
+.foerderung-bottom-cta .btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.foerderung-bottom-cta .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .foerderung-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+}
