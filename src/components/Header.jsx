@@ -94,7 +94,7 @@ export default function Header() {
       <div className="container header-content">
         <div className="logo" onClick={goHome} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goHome() } }} role="button" tabIndex={0}>
           <img
-            src="/images/Logo_Förderverein.png"
+            src="/images/Logo_Förderverein_transparent.png"
             alt="Förderverein der ingenieurwissenschaftlichen Fachbereiche, Standort Krefeld – Hochschule Niederrhein"
             className="logo-full"
           />
@@ -109,7 +109,7 @@ export default function Header() {
           {/* Logo-Bereich im Mobilmenü */}
           <div className="nav-mobile-header">
             <img
-              src="/images/Logo_Förderverein.png"
+              src="/images/Logo_Förderverein_transparent.png"
               alt="Förderverein der ingenieurwissenschaftlichen Fachbereiche, Standort Krefeld – Hochschule Niederrhein"
               className="nav-mobile-logo-img"
             />

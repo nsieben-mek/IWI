@@ -168,15 +168,10 @@ app.post('/api/kontakt', rateLimit(60000, 3), async (req, res) => {
 // Mitgliedschaftsformular
 app.post('/api/mitglied-werden', rateLimit(60000, 3), async (req, res) => {
   try {
-    const { zielgruppe, paket, vorname, nachname, email, organisation, nachricht } = req.body
+    const { vorname, nachname, email, organisation, nachricht } = req.body
 
     // Validierung
     const errors = []
-    const validZielgruppen = ['unternehmen', 'alumni', 'studierende']
-    const validPakete = ['basis', 'netzwerk', 'partner', 'alumni', 'studierende']
-
-    if (!zielgruppe || !validZielgruppen.includes(zielgruppe)) errors.push('Bitte wählen Sie eine Zielgruppe.')
-    if (!paket || !validPakete.includes(paket)) errors.push('Bitte wählen Sie ein Mitgliedschaftspaket.')
     if (!vorname || sanitize(vorname).length < 2) errors.push('Bitte geben Sie Ihren Vornamen an.')
     if (!nachname || sanitize(nachname).length < 2) errors.push('Bitte geben Sie Ihren Nachnamen an.')
     if (!email || !validateEmail(email)) errors.push('Bitte geben Sie eine gültige E-Mail-Adresse an.')
@@ -185,23 +180,7 @@ app.post('/api/mitglied-werden', rateLimit(60000, 3), async (req, res) => {
       return res.status(400).json({ error: errors.join(' ') })
     }
 
-    const paketLabels = {
-      basis: 'Unternehmen – Basis (500 € p. a.)',
-      netzwerk: 'Unternehmen – Netzwerk (1.500 € p. a.)',
-      partner: 'Unternehmen – Partner (3.000 € p. a.)',
-      alumni: 'Alumni / Förderfreunde (50–120 € p. a.)',
-      studierende: 'Studierende (kostenlos / 10 € p. a.)'
-    }
-
-    const zielgruppeLabels = {
-      unternehmen: 'Unternehmen',
-      alumni: 'Alumni / Förderfreund',
-      studierende: 'Studierende/r'
-    }
-
     const cleanData = {
-      zielgruppe: zielgruppeLabels[zielgruppe] || zielgruppe,
-      paket: paketLabels[paket] || paket,
       vorname: sanitize(vorname),
       nachname: sanitize(nachname),
       email: sanitize(email),
@@ -222,8 +201,6 @@ app.post('/api/mitglied-werden', rateLimit(60000, 3), async (req, res) => {
         html: `
           <h2>Neue Mitgliedschaftsanfrage</h2>
           <table style="border-collapse:collapse;">
-            <tr><td style="padding:8px;font-weight:bold;">Zielgruppe:</td><td style="padding:8px;">${escapeHtml(cleanData.zielgruppe)}</td></tr>
-            <tr><td style="padding:8px;font-weight:bold;">Paket:</td><td style="padding:8px;">${escapeHtml(cleanData.paket)}</td></tr>
             <tr><td style="padding:8px;font-weight:bold;">Name:</td><td style="padding:8px;">${escapeHtml(cleanData.vorname)} ${escapeHtml(cleanData.nachname)}</td></tr>
             <tr><td style="padding:8px;font-weight:bold;">E-Mail:</td><td style="padding:8px;">${escapeHtml(cleanData.email)}</td></tr>
             <tr><td style="padding:8px;font-weight:bold;">Organisation:</td><td style="padding:8px;">${escapeHtml(cleanData.organisation) || '–'}</td></tr>

@@ -97,10 +97,6 @@
   gap: var(--space-md);
 }
 
-.mitglied-werden-form .form-row-3 {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 .mitglied-werden-form .form-actions {
   display: flex;
   gap: var(--space-md);
@@ -121,8 +117,7 @@
     margin: 0;
   }
 
-  .mitglied-werden-form .form-row,
-  .mitglied-werden-form .form-row-3 {
+  .mitglied-werden-form .form-row {
     grid-template-columns: 1fr;
   }
 

@@ -7,14 +7,11 @@
   --hsnr-blue:          #07a1e2;
   --hsnr-blue-dark:     #185191;
   --hsnr-blue-deeper:   #14457b;
-  --hsnr-orange:        #e24807;
 
   /* Funktionale Farben */
   --color-primary:      var(--hsnr-blue);
   --color-primary-dark: var(--hsnr-blue-dark);
-  --color-accent:       var(--hsnr-orange);
   --color-success:      #28a745;
-  --color-warning:      #ffc107;
   --color-error:        #dc3545;
 
   /* Neutrale Farben */
@@ -39,9 +36,6 @@
   --font-size-base:     1rem;
   --font-size-md:       1.125rem;
   --font-size-lg:       1.25rem;
-  --font-size-xl:       1.5rem;
-  --font-size-2xl:      1.75rem;
-  --font-size-3xl:      2rem;
   --font-size-4xl:      2.5rem;
 
   /* Fluid Typography (wie HS Niederrhein mit clamp) */
@@ -66,7 +60,6 @@
   --space-xl:   2rem;
   --space-2xl:  3rem;
   --space-3xl:  4.5rem;
-  --space-4xl:  6rem;
 
   /* --- Layout --- */
   --container-max:      83.25rem;
@@ -75,12 +68,10 @@
   /* --- Border Radius (HS Niederrhein: eckig!) --- */
   --radius-none:  0;
   --radius-sm:    0.25rem;
-  --radius-md:    0.25rem;
 
   /* --- Schatten (minimal, wie HS Niederrhein) --- */
   --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md:    0 4px 12px rgba(0, 0, 0, 0.1);
-  --shadow-lg:    0 4px 20px rgba(0, 0, 0, 0.15);
 
   /* --- Transition --- */
   --transition:   all 0.3s ease-out;

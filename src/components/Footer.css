@@ -47,9 +47,8 @@
 }
 
 .footer-logo-img {
-  height: auto;
-  width: 100%;
-  max-width: 340px;
+  height: 100px;
+  width: auto;
   /* Logo weiß einfärben für dunklen Hintergrund */
   filter: brightness(0) invert(1);
 }
@@ -180,7 +179,7 @@
   }
 
   .footer-logo-img {
-    max-width: 280px;
+    height: 80px;
   }
 
   .footer-social {
