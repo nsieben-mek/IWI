@@ -114,6 +114,8 @@ export default function Kontakt() {
               </label>
             </div>
 
+            <p className="form-required-hint">* Pflichtfeld</p>
+
             <button type="submit" className="btn btn-primary" disabled={loading}>
               {loading ? 'Wird gesendet...' : 'Nachricht senden'}
             </button>

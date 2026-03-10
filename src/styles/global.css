@@ -168,6 +168,13 @@ a:focus {
   background: var(--color-gray-600);
 }
 
+/* --- Pflichtfeld-Hinweis --- */
+.form-required-hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-lg);
+}
+
 /* --- Formular-Status --- */
 .form-status {
   padding: var(--space-md);

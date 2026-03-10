@@ -107,7 +107,7 @@ export default function MitgliedWerden() {
                 <input type="email" id="mw-email" name="email" value={formData.email} onChange={handleChange} required />
               </div>
               <div className="form-group">
-                <label htmlFor="mw-organisation">Unternehmen / Organisation</label>
+                <label htmlFor="mw-organisation">Unternehmen / Organisation (optional)</label>
                 <input type="text" id="mw-organisation" name="organisation" value={formData.organisation} onChange={handleChange} />
               </div>
             </div>
@@ -144,6 +144,8 @@ export default function MitgliedWerden() {
                 </span>
               </label>
             </div>
+
+            <p className="form-required-hint">* Pflichtfeld</p>
 
             <div className="form-actions">
               <button type="submit" className="btn btn-primary" disabled={loading}>
