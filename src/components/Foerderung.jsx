@@ -23,9 +23,9 @@ const foerderarten = [
       </svg>
     ),
     title: 'Auslandsaufenthalte',
-    text: 'Internationale Erfahrungen erweitern den Horizont – auch wenn das Budget knapp ist. Wir fördern Auslandsaufenthalte von Studierenden mit einem Zuschuss von 500\u00A0Euro.',
-    detail: 'Bewerbung jederzeit möglich.',
-    cta: { label: 'Zuschuss anfragen', href: '#kontakt' }
+    text: 'Internationale Erfahrungen erweitern den Horizont – auch wenn das Budget knapp ist. Wir fördern Auslandsaufenthalte von Studierenden mit einem einmaligen Zuschuss von 600\u00A0Euro.',
+    detail: 'Antragsfrist: jeweils bis zum 28. Februar.',
+    cta: { label: 'Details & Unterlagen', href: '#auslandsfoerderung' }
   },
   {
     icon: (
@@ -67,10 +67,6 @@ export default function Foerderung() {
               )}
             </div>
           ))}
-        </div>
-
-        <div className="section-cta foerderung-bottom-cta">
-          <a href="#downloads" className="btn btn-secondary">Förderkriterien ansehen</a>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Kurzprofil from './components/Kurzprofil'
 import Wirkung from './components/Wirkung'
 import Foerderung from './components/Foerderung'
+import Foerderdetails from './components/Foerderdetails'
 import Mitgliedschaft from './components/Mitgliedschaft'
 import MitgliedWerden from './components/MitgliedWerden'
 import Events from './components/Events'
@@ -22,6 +23,7 @@ function HomePage() {
       <Kurzprofil />
       <Wirkung />
       <Foerderung />
+      <Foerderdetails />
       <Mitgliedschaft />
       <MitgliedWerden />
       <Events />
