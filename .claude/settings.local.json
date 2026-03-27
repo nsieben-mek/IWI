@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E \"\\\\.jsx$|\\\\.css$\")"
+      "Bash(grep -E \"\\\\.jsx$|\\\\.css$\")",
+      "WebSearch",
+      "WebFetch(domain:akademieverein.de)",
+      "WebFetch(domain:www.htwk-leipzig.de)",
+      "WebFetch(domain:www.wiwi.uni-siegen.de)",
+      "WebFetch(domain:www.wi-net.de)",
+      "WebFetch(domain:www.fwi-ev.de)",
+      "WebFetch(domain:www.hochschule-ruhr-west.de)",
+      "WebFetch(domain:www.studentenwerk-dresden.de)",
+      "WebFetch(domain:www.thm.de)",
+      "WebFetch(domain:legacy.d120.de)"
     ]
   }
 }

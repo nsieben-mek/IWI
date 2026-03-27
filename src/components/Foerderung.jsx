@@ -12,7 +12,7 @@ const foerderarten = [
     title: 'Projektförderung',
     text: 'Ob Prototyp, Wettbewerb, Fachexkursion oder Materialkosten: Wir unterstützen praxisnahe Vorhaben, die Studium und Lehre spürbar verbessern.',
     detail: 'Kurzer Antrag, klare Kriterien, schnelle Rückmeldung.',
-    cta: { label: 'Projektidee einreichen', href: '#kontakt' }
+    cta: { label: 'Details & Antrag', href: '#projektfoerderung' },
   },
   {
     icon: (

@@ -141,7 +141,7 @@ export default function Kontakt() {
                 </svg>
                 <div>
                   <strong>E-Mail</strong>
-                  <p>info@iwi-hs-niederrhein.de</p>
+                  <p><a href="mailto:info@foerderverein-iundi.de">info@foerderverein-iundi.de</a></p>
                 </div>
               </div>
 
